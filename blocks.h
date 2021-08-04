@@ -5,7 +5,7 @@ static const Block blocks[] = {
 	{" ", "$HOME/.scripts/date.sh",			60,		0},
     {"", "$HOME/.scripts/battery_status.sh", 10, 0},
 	{" ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
-    {" ", "$HOME/.scripts/ip.sh", 60, 0},
+    {" ", "ip addr | awk '$2 ~ 192 {print $2}' | sed \"s/\\/24//g\"", 60, 0},
     {"  ", "", 0, 0},
 };
 
